@@ -54,6 +54,9 @@ This [OSF](https://osf.io/6mvq7/) directory contains the raw and processed data 
 To repeat the analyses of the *related research article*, follow the instructions in the README file.
 
 ```{r}
+#| include: false
+# load tidyverse
+library(tidyverse)
 # read in data to environment so we can use inline code
 bronars_simulation_data <- read_csv("data/raw/bronars_simulation_data.csv")
 ```
