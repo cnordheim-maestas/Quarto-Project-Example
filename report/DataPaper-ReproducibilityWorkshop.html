@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -92,12 +126,15 @@ div.csl-indent {
 <p>Citation to original version of this data article:</p>
 <p>Nitsch, F. J., Sellitto, M., &amp; Kalenscher, T. (2021). Trier social stress test and food-choice: Behavioral, self-report &amp; hormonal data. <em>Data in brief</em>, <em>37</em>, 107245. <a href="https://doi.org/10.1016/j.dib.2021.107245">doi</a></p>
 <p><strong>Abstract</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>A sample of 144 participants underwent the Trier Social Stress Test (TSST), a psychosocial stress manipulation involving a mock interview and a mental arithmetic task, or a matched control procedure. Physiological stress was estimated via a collection of 7 saliva samples over the course of the experiment analysed for cortisol and alpha-amylase, as well as via the mean heart-rate measured before and during the experimental manipulation. Subjective stress was assessed via the Positive and Negative Affect Scale as well as four Visual Analogue Scales at 6 points over the time course of the experiment.</p>
 <p><strong>Keywords:</strong> Acute stress; Amylase Choice Consistency; Cortisol; Chronic StressFood-Choice; Rationality.</p>
 <section id="value-of-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="value-of-the-data"><strong>1. Value of the Data</strong></h2>
 <ul>
-<li><p>The data are useful, as both the analysis of salivary cortisol for a relatively large sample as well as the implementation of an incentive-compatible behavioral task are expensive. Further, data sharing in the field of choice consistency/rationality is still relatively uncommon, making the aggregation of evidence challenging <span class="citation" data-cites="nitsch2020b">(<a href="#ref-nitsch2020b" role="doc-biblioref"><strong>nitsch2020b?</strong></a>)</span>.</p></li>
+<li><p>The data are useful, as both the analysis of salivary cortisol for a relatively large sample as well as the implementation of an incentive-compatible behavioral task are expensive. Further, data sharing in the field of choice consistency/rationality is still relatively uncommon, making the aggregation of evidence challenging <span class="citation" data-cites="nitsch2020">(<a href="#ref-nitsch2020" role="doc-biblioref">Nitsch &amp; Kalenscher, 2020</a>)</span>.</p></li>
 <li><p>The data is valuable to researchers interested in the interplay of physiological and subjective stress. It enables exploratory data-analysis regarding individual differences in stress reactivity and mediators of the stress response.</p></li>
 </ul>
 </section>
@@ -134,15 +171,20 @@ div.csl-indent {
 <section id="experimental-design-materials-and-methods" class="level2">
 <h2 class="anchored" data-anchor-id="experimental-design-materials-and-methods"><strong>3. Experimental Design, Materials and Methods</strong></h2>
 <p>The dataset contains data of 144 participants. Participants did not have formal psychological or economic education, were 18–40 years old, non-smokers and did not take medication that could have influenced their corticosteroid levels. Women were not taking oral contraceptives. Similar to previous studies, participants had to refrain from drinking alcohol and sexual activities for 24 h, from caffeine for four hours and from eating/drinking (except water) for two hours prior to the beginning of the experiment.</p>
-<p><img src="fig/Fig1.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/Fig1.jpg" class="img-fluid figure-img" alt="table"></p>
+<figcaption class="figure-caption">Figure 1</figcaption>
+</figure>
+</div>
 <p>[Fig. 1 provides an exact overview of the experimental timeline for each measure we collected. All experimental sessions took place from 3 p.m. to 6 p.m. to control for circadian variations of hormonal levels. Participants were assigned to the two experimental conditions pseudo-randomly.]</p>
-<p>Our food-choice task was administered following a 2 × 3 mixed-factorial design with Experimental Group (stress vs.&nbsp;control) as between-subject factor and Measurement (Baseline, Early, Late) as within-subject factor. We deployed a standard food-choice task similar to the one used by <span class="citation" data-cites="harbaugh2001">Harbaugh, Krause, and Berry (<a href="#ref-harbaugh2001" role="doc-biblioref">2001</a>)</span> and <span class="citation" data-cites="chung2017">Chung, Tymula, and Glimcher (<a href="#ref-chung2017" role="doc-biblioref">2017</a>)</span>. In each trial, participants chose one out of a set of two to seven snack bundles. Each snack bundle consisted of specific amounts of a sweet or salty snack and a fruit or vegetable. The choice set was defined by all integer combinations of sweet or salty snack and fruit or vegetable on the budget-line. The budget-line was given by the following formula:</p>
+<p>Our food-choice task was administered following a 2 × 3 mixed-factorial design with Experimental Group (stress vs.&nbsp;control) as between-subject factor and Measurement (Baseline, Early, Late) as within-subject factor. We deployed a standard food-choice task similar to the one used by <span class="citation" data-cites="harbaugh2001">Harbaugh et al. (<a href="#ref-harbaugh2001" role="doc-biblioref">2001</a>)</span> and <span class="citation" data-cites="chung2017">Chung et al. (<a href="#ref-chung2017" role="doc-biblioref">2017</a>)</span>. In each trial, participants chose one out of a set of two to seven snack bundles. Each snack bundle consisted of specific amounts of a sweet or salty snack and a fruit or vegetable. The choice set was defined by all integer combinations of sweet or salty snack and fruit or vegetable on the budget-line. The budget-line was given by the following formula:</p>
 <p><span class="math inline">\(Amount (fruit/vegetable) = - px/py Amount (sweet/salty) + m/py\)</span></p>
 <p>At the end of the experiment, one trial was randomly selected for each participant, and their choice in that trial was implemented, i.e., participants received their chosen snack bundle. The experimental task was presented via PsychoPy <span class="citation" data-cites="peirce2007">Peirce (<a href="#ref-peirce2007" role="doc-biblioref">2007</a>)</span>. For 8 participants (out of N = 144 participants), no or incomplete food-choice data were saved due to a technical failure of the experimental hardware.</p>
 </section>
 <section id="preview-of-research-results" class="level2">
 <h2 class="anchored" data-anchor-id="preview-of-research-results"><strong>4. Preview of Research Results</strong></h2>
-<p><strong>Cross-reference (Figure 3)</strong> below describes the mean heart rate of stress and control groups at baseline and during intervention.</p>
+<p>Look at <a href="#fig-heartrate">Figure&nbsp;1</a> below describes the mean heart rate of stress and control groups at baseline and during intervention.</p>
 </section>
 <section id="fig-3---heart-rate-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="fig-3---heart-rate-analysis">Fig 3 - Heart Rate Analysis</h2>
@@ -157,7 +199,7 @@ div.csl-indent {
 </div>
 </div>
 <p>(<strong>Example 9</strong>) add Fig 4: Cortisol and Amylase Levels in Stress and Control Groups</p>
-<p>All analyses were conducted in R in the RStudio IDE, using the packages Tidyverse (<strong>add citation here</strong>), string (<strong>add citation here</strong>), BayesFactor and patchwork.</p>
+<p>All analyses were conducted in R in the RStudio IDE, using the packages Tidyverse <span class="citation" data-cites="wickham2019">(<a href="#ref-wickham2019" role="doc-biblioref">Wickham et al., 2019</a>)</span>, stringi <span class="citation" data-cites="stringi">(<a href="#ref-stringi" role="doc-biblioref">Gagolewski, 2021</a>)</span>, BayesFactor <span class="citation" data-cites="BayesFactor">(<a href="#ref-BayesFactor" role="doc-biblioref">Morey &amp; Rouder, 2023</a>)</span> and patchwork <span class="citation" data-cites="patchwork">(<a href="#ref-patchwork" role="doc-biblioref">Pedersen, 2023</a>)</span>.</p>
 </section>
 <section id="ethics-statement" class="level2">
 <h2 class="anchored" data-anchor-id="ethics-statement">Ethics Statement</h2>
@@ -167,18 +209,33 @@ div.csl-indent {
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-afriat1972" class="csl-entry" role="listitem">
-Afriat, S. N. 1972. <span>“Efficiency Estimation of Production Functions.”</span> <em>International Economic Review</em> 13 (3): 568. <a href="https://doi.org/10.2307/2525845">https://doi.org/10.2307/2525845</a>.
+Afriat, S. N. (1972). Efficiency estimation of production functions. <em>International Economic Review</em>, <em>13</em>(3), 568. <a href="https://doi.org/10.2307/2525845">https://doi.org/10.2307/2525845</a>
 </div>
 <div id="ref-chung2017" class="csl-entry" role="listitem">
-Chung, Hui-Kuan, Agnieszka Tymula, and Paul Glimcher. 2017. <span>“The Reduction of Ventrolateral Prefrontal Cortex Gray Matter Volume Correlates with Loss of Economic Rationality in Aging.”</span> <em>The Journal of Neuroscience</em> 37 (49): 12068–77. <a href="https://doi.org/10.1523/jneurosci.1171-17.2017">https://doi.org/10.1523/jneurosci.1171-17.2017</a>.
+Chung, H.-K., Tymula, A., &amp; Glimcher, P. (2017). The Reduction of Ventrolateral Prefrontal Cortex Gray Matter Volume Correlates with Loss of Economic Rationality in Aging. <em>The Journal of Neuroscience</em>, <em>37</em>(49), 12068–12077. <a href="https://doi.org/10.1523/jneurosci.1171-17.2017">https://doi.org/10.1523/jneurosci.1171-17.2017</a>
+</div>
+<div id="ref-stringi" class="csl-entry" role="listitem">
+Gagolewski, M. (2021). <em>Stringi: Fast and portable character string processing in r</em>.
 </div>
 <div id="ref-harbaugh2001" class="csl-entry" role="listitem">
-Harbaugh, William T, Kate Krause, and Timothy R Berry. 2001. <span>“GARP for Kids: On the Development of Rational Choice Behavior.”</span> <em>American Economic Review</em> 91 (5): 1539–45. <a href="https://doi.org/10.1257/aer.91.5.1539">https://doi.org/10.1257/aer.91.5.1539</a>.
+Harbaugh, W. T., Krause, K., &amp; Berry, T. R. (2001). GARP for Kids: On the Development of Rational Choice Behavior. <em>American Economic Review</em>, <em>91</em>(5), 1539–1545. <a href="https://doi.org/10.1257/aer.91.5.1539">https://doi.org/10.1257/aer.91.5.1539</a>
+</div>
+<div id="ref-BayesFactor" class="csl-entry" role="listitem">
+Morey, R. D., &amp; Rouder, J. N. (2023). <em>BayesFactor: Computation of bayes factors for common designs</em>. <a href="https://CRAN.R-project.org/package=BayesFactor">https://CRAN.R-project.org/package=BayesFactor</a>
+</div>
+<div id="ref-nitsch2020" class="csl-entry" role="listitem">
+Nitsch, F. J., &amp; Kalenscher, T. (2020). <em>Keeping a cool head at all times. What determines choice consistency?</em> <a href="http://dx.doi.org/10.31234/osf.io/etyhx">http://dx.doi.org/10.31234/osf.io/etyhx</a>
+</div>
+<div id="ref-patchwork" class="csl-entry" role="listitem">
+Pedersen, T. L. (2023). <em>Patchwork: The composer of plots</em>. <a href="https://CRAN.R-project.org/package=patchwork">https://CRAN.R-project.org/package=patchwork</a>
 </div>
 <div id="ref-peirce2007" class="csl-entry" role="listitem">
-Peirce, Jonathan W. 2007. <span>“PsychoPy<span></span>Psychophysics Software in Python.”</span> <em>Journal of Neuroscience Methods</em> 162 (1-2): 8–13. <a href="https://doi.org/10.1016/j.jneumeth.2006.11.017">https://doi.org/10.1016/j.jneumeth.2006.11.017</a>.
+Peirce, J. W. (2007). PsychoPy<span></span>Psychophysics software in Python. <em>Journal of Neuroscience Methods</em>, <em>162</em>(1-2), 8–13. <a href="https://doi.org/10.1016/j.jneumeth.2006.11.017">https://doi.org/10.1016/j.jneumeth.2006.11.017</a>
+</div>
+<div id="ref-wickham2019" class="csl-entry" role="listitem">
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T., Miller, E., Bache, S., Müller, K., Ooms, J., Robinson, D., Seidel, D., Spinu, V., … Yutani, H. (2019). Welcome to the tidyverse. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
 </div>
 </div>
 </section>
