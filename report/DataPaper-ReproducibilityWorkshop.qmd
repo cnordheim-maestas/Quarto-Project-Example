@@ -98,7 +98,7 @@ Look at @fig-heartrate below describes the mean heart rate of stress and control
 #| fig.cap: "Mean heart rate of stress and control groups at baseline and during intervention."
 #| fig.align: (center)
 
-source("code/03_HR_analysis.R")
+source("code/03_HR_analysis.R") # to edit the R directly!
 plot
 ```
 
